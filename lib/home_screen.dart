@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'global_variables.dart';
 import 'home_body.dart';
 import 'profile_screen.dart';
 import 'side_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  int selectedIndex=0;
+  HomeScreen({required this.selectedIndex});
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var _selectedIndex = 0;
+  int _selectedIndex = 0;
   var title = 'Pending Orders';
   final ScrollController _homeController = ScrollController();
 
@@ -26,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      widget.selectedIndex=index;
+      _selectedIndex = widget.selectedIndex;
       if(_selectedIndex==0)
       {
         setState(() {
@@ -47,7 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
   }
-
+  @override
+  void initState() {
+    _onItemTapped(widget.selectedIndex);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

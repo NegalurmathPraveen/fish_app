@@ -21,4 +21,3 @@ var directory;
 
 //scaffold key
 final GlobalKey<FormState> scaffoldKey = GlobalKey<FormState>();
-

@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
   login(var email,var password){
     if(email=='abc@gmail.com' && _passwordController.text=='abc123')
     {
-      Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (c) => HomeScreen()), (Route<dynamic> route) => false);
+      Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (c) => HomeScreen(selectedIndex: 0,)), (Route<dynamic> route) => false);
     }
   }
 

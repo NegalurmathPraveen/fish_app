@@ -1,4 +1,5 @@
 
+import 'package:fish_app/home_screen.dart';
 import 'package:fish_app/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,7 @@ class _SideDrawerState extends State<SideDrawer> {
           if(item=='Profile')
           {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (c) => ProfileScreen()));
+                MaterialPageRoute(builder: (c) => HomeScreen(selectedIndex: 2)));
           }
           else if(item=='Terms & Conditions')
           {
